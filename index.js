@@ -1,5 +1,3 @@
-var browserify = require('browserify');
-
 module.exports = function(browserifyOpts, browserifyMiddleware) {
 	var lastModified = browserifyMiddleware.modified.getTime();
 	return function(req, res, next) {
@@ -11,7 +9,7 @@ module.exports = function(browserifyOpts, browserifyMiddleware) {
 		//Check to see if client is requesting the client script
 		if(req.url.substr(0, browserifyOpts.mount.length) == browserifyOpts.mount)
 		{
-			//Add expires header
+			//Add expires header - maximum recommended expiration is one year
 			var d = new Date();
 			d.setFullYear(d.getFullYear() + 1);
 			res.setHeader('Expires', d.toUTCString() );
