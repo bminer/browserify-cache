@@ -9,18 +9,22 @@ browserify-cache - Strong and weak caching for Browserify bundles
 In the client HTML, your Browserify bundle URL should contain the UNIX timestamp that matches the last modified date of the bundle.
 
 https://github.com/substack/node-browserify
+
 http://code.google.com/speed/page-speed/docs/caching.html
 
 ##Usage
 
 ```javascript
+//Create Express app and config...
+
+//Setup browserify
 var browserify = require('browserify');
 var browserifyCache = require('browserify-cache');
 var browserifyMiddleware = browserify(config.browserify);
 app.use(express.browserifyCache(config.browserify, browserifyMiddleware) );
 
 //Now you can expose this URL to your views using Express
-app.dynamicHelpers({
+app.helpers({
 	'browserifyMount': function() {
 		return config.browserify.mount + '.' + browserifyMiddleware.modified.getTime() + '.js';
 	}
