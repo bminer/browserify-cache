@@ -2,14 +2,14 @@
   "author": "Blake Miner <miner.blake@gmail.com> (http://www.blakeminer.com/)",
   "name": "browserify-cache",
   "description": "Easily cache Browserify bundles",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "git://github.com/bminer/browserify-cache.git"
   },
   "main": "index.js",
   "engines": {
-    "node": ">0.4.9"
+    "node": ">=0.4.0"
   },
   "dependencies": {},
   "devDependencies": {}
