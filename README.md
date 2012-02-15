@@ -16,16 +16,21 @@ http://code.google.com/speed/page-speed/docs/caching.html
 
 ```javascript
 //Create Express app and config...
+var config = {
+	'browserify': { /* Configure as you normally would... */ }
+};
 
 //Setup browserify
 var browserify = require('browserify');
 var browserifyCache = require('browserify-cache');
 var browserifyMiddleware = browserify(config.browserify);
-app.use(express.browserifyCache(config.browserify, browserifyMiddleware) );
+app.use(browserifyCache(config.browserify, browserifyMiddleware) );
 
 //Now you can expose this URL to your views using Express
 app.helpers({
 	'browserifyMount': function() {
+		/* Note: browserify-cache will add the `mount` property to the
+			browserify config object, in case you don't specify it. */
 		return config.browserify.mount + '.' + browserifyMiddleware.modified.getTime() + '.js';
 	}
 });
