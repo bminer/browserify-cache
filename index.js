@@ -1,6 +1,8 @@
 var dumb = function() {};
 const secondsInYear =  365 * 24 * 60 * 60; //const is the new, cool thing
 module.exports = function(browserifyOpts, browserifyMiddleware) {
+	if(browserifyOpts.mount == null)
+		browserifyOpts.mount = '/browserify.js'; //Use browserify default mount path
 	return function(req, res, next) {
 		//Pass a fake request through browserify so that we can update the bundle if it has changed
 		//Yeah... we have to do this for each request... runs pretty quick, though
