@@ -1,4 +1,15 @@
-browserify-cache - Strong and weak caching for Browserify bundles
+# This project is dead...
+
+**...and has been replaced by [node-static-asset](https://github.com/bminer/node-static-asset).**
+
+Do not install this package. It may be deleted from the npm repositories at any time.
+
+
+---
+
+
+
+# browserify-cache - Strong and weak caching for Browserify bundles
 
 ##Background
 
