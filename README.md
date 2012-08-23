@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/bminer/browserify-cache.png)](http://travis-ci.org/bminer/browserify-cache)
 # This project is dead...
 
 **...and has been replaced by [node-static-asset](https://github.com/bminer/node-static-asset).**
